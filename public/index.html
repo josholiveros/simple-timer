@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="./css/main.css">
+</head>
+
+<body class="text-center">
+  <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+    <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Simple Timer</a>
+    <ul class="navbar-nav px-3">
+      <li class="nav-item text-nowrap" id="sign-out-wrapper">
+      </li>
+    </ul>
+  </nav>
+  <div class="container mt-5">
+    <div class="row">
+      <form class="form-signin" id="loginForm" style="display: none;">
+        <h1 class="h3 mb-3 font-weight-normal">Sign In</h1>
+        <label for="inputEmail" class="sr-only">Email address</label>
+        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required="" autofocus="">
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
+        <div class="checkbox mb-3">
+          <label>
+            <input type="checkbox" value="remember-me"> Remember me
+          </label>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+      </form>
+    </div>
+    <div id="mainApp" class="row" style="display: none;">
+      <table class="table table-hover" id="mainList">
+        <thead>
+          <tr>
+            <!--Task	Time Spent	Goal	Progress	Options-->
+            <th scope="col">Task</th>
+            <th scope="col">Time Spent</th>
+            <th scope="col">Goal</th>
+            <th scope="col">Progress</th>
+            <th scope="col">Options</th>
+          </tr>
+        </thead>
+        <tbody id="taskList">
+        </tbody>
+      </table>
+      <div id="createFormWrapper"></div>
+      <button id="downloadBtn" class="btn btn-primary" title="Download CSV"><i class="fas fa-download"></i></button>
+    </div>
+    <div class="modal fade" id="editTaskModal" tabindex="-1" role="dialog" aria-labelledby="editTaskModalLabel"
+      aria-hidden="true"></div>
+  </div>
+
+  <!-- SCRIPTS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.11/lodash.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0/moment.min.js"></script>
+
+  <script src="./js/user-controller.js"></script>
+  <script src="./js/task-list-controller.js"></script>
+  <script src="./js/task-create-controller.js"></script>
+  <script src="./js/task-edit-controller.js"></script>
+  <script src="./js/task-controller.js"></script>
+
+  <script src="./js/client-service.js"></script>
+  <script src="./js/app-controller.js"></script>
+</body>
